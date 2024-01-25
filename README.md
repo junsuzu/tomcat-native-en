@@ -107,7 +107,6 @@ export TOMCAT_STUFFED=/home/opc/project/tomcat-native-en/stuffed
 Copy the deployed web applications of springTomcat from the Tomcat server to the stuffed/webapps directory.
 ```
 cp -r $CATALINA_HOME/webapps/springTomcat $TOMCAT_STUFFED/webapps/
-
 ```
 Similarly copy default web applicatins ROOT and manager.
 ```
