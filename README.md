@@ -94,7 +94,7 @@ Follow the instructions in the official Tomcat documentation https://tomcat.apac
 git clone https://github.com/apache/tomcat.git
 
 ```
-All of the successor tasks will be conducted under the stuffed folder. 
+In this demo we copy "/tomcat/modules/stuffed" folder into "tomcat-native-en". All of the successor tasks will be conducted under tomcat-native-en/stuffed. 
 ```
 cp -r ./tomcat/modules/stuffed ./tomcat-native-en/
 ```
