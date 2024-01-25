@@ -97,13 +97,11 @@ git clone https://github.com/apache/tomcat.git
 All of the successor tasks will be conducted under the stuffed folder. 
 ```
 cp -r ./tomcat/modules/stuffed ./tomcat-native-en/
-
 ```
 > **NOTE:** For reference, the stuffed folder after completing all tasks is stored in the complete folder.  
 > **NOTE:** Define the location of 'stuffed' as an environment variable. The following is an example of the definition in ~/.bashrc: 
 ```
 export TOMCAT_STUFFED=/home/opc/project/tomcat-native-en/stuffed
-
 ```
 
 Copy the deployed web applications of springTomcat from the Tomcat server to the stuffed/webapps directory.
