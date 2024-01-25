@@ -43,10 +43,18 @@ export PATH=$ANT_HOME/bin:$PATH
 Create a web application using Spring Framework, deploy it as a WAR file to Tomcat. Later, we will build this application along with Tomcat server into native-image.
 
 ```
-$ git clone https://github.com/junsuzu/tomcat-native-jp
-$ cd spring-framework-tomcat-sample
-$ mvn clean package
-$ cd target
+git clone https://github.com/junsuzu/tomcat-native-en
+```
+```
+cd tomcat-native-en
+```
+
+```
+cd spring-framework-tomcat-sample
+```
+
+```
+mvn clean package
 ```
 
 Verify that the springTomcat.war file is generated in the target directory.
@@ -88,13 +96,13 @@ git clone https://github.com/apache/tomcat.git
 ```
 All of the successor tasks will be conducted under the stuffed folder. 
 ```
-cp -r tomcat/modules/stuffed ../tomcat-native-jp/
+cp -r ./tomcat/modules/stuffed ./tomcat-native-en/
 
 ```
 > **NOTE:** For reference, the stuffed folder after completing all tasks is stored in the complete folder.  
 > **NOTE:** Define the location of 'stuffed' as an environment variable. The following is an example of the definition in ~/.bashrc: 
 ```
-export TOMCAT_STUFFED=/home/opc/project/tomcat-native-jp/stuffed
+export TOMCAT_STUFFED=/home/opc/project/tomcat-native-en/stuffed
 
 ```
 
@@ -254,7 +262,7 @@ Start the Docker container and check that the Tomcat server and springframework 
 docker run --name tomcat-native -p 8080:8080 apache/tomcat-stuffed-native:1.0
 ```
 ```
-[opc@jms-instance-2 tomcat-native-jp]$ curl http://localhost:8080/springTomcat/greeting
+[opc@jms-instance-2 tomcat-native-en]$ curl http://localhost:8080/springTomcat/greeting
 Hello Spring Framework World
 ```
 
@@ -262,9 +270,9 @@ Compare the application execution time when running the native image of the Tomc
 
 *native image
 ```
-[opc@jms-instance-2 tomcat-native-jp]$ docker start tomcat-native
+[opc@jms-instance-2 tomcat-native-en]$ docker start tomcat-native
 tomcat-native
-[opc@jms-instance-2 tomcat-native-jp]$ time curl http://localhost:8080/springTomcat/greeting
+[opc@jms-instance-2 tomcat-native-en]$ time curl http://localhost:8080/springTomcat/greeting
 Hello Spring Framework World
 
 real    0m0.012s
@@ -274,7 +282,7 @@ sys     0m0.005s
 
 *Tomcat server
 ```
-[opc@jms-instance-2 tomcat-native-jp]$ startup.sh
+[opc@jms-instance-2 tomcat-native-en]$ startup.sh
 Using CATALINA_BASE:   /opt/apache-tomcat-10.0.27
 Using CATALINA_HOME:   /opt/apache-tomcat-10.0.27
 Using CATALINA_TMPDIR: /opt/apache-tomcat-10.0.27/temp
@@ -282,7 +290,7 @@ Using JRE_HOME:        /usr/lib64/graalvm/graalvm-java21
 Using CLASSPATH:       /opt/apache-tomcat-10.0.27/bin/bootstrap.jar:/opt/apache-tomcat-10.0.27/bin/tomcat-juli.jar
 Using CATALINA_OPTS:   
 Tomcat started.
-[opc@jms-instance-2 tomcat-native-jp]$ time curl http://localhost:8080/springTomcat/greeting
+[opc@jms-instance-2 tomcat-native-en]$ time curl http://localhost:8080/springTomcat/greeting
 Hello Spring Framework World
 
 real    0m0.273s
